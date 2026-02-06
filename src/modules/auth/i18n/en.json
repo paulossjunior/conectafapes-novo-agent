@@ -1,0 +1,38 @@
+{
+    "auth": {
+        "login": {
+            "title": "Identify Yourself",
+            "subtitle": "Choose your profile to access the platform",
+            "govbr_button": "Access with Acesso Cidadão",
+            "logo_subtitle": "Foundation for Research and Innovation of Espírito Santo",
+            "legal_notice": "We use the {source} database to ensure your data security according to LGPD.",
+            "govbr_source": "Gov.br",
+            "modal": {
+                "title": "Gov.br Simulation",
+                "form_label": "Citizen Access Form",
+                "header": "Citizen Access",
+                "description": "Identify yourself to continue accessing Conecta Fapes",
+                "email_label": "Registered Email",
+                "email_help": "Enter your Gov.br email",
+                "email_placeholder": "example@email.com",
+                "hint": "Tip: Use one of the mock emails (e.g., joao@fapes.org) to simulate success.",
+                "submit_button": "Continue"
+            }
+        },
+        "roles": {
+            "group_label": "Select your access profile",
+            "voluntario": "Volunteer",
+            "bolsista": "Scholarship Holder",
+            "coordenador": "Coordinator",
+            "aria_label": "{label} profile"
+        },
+        "feedback": {
+            "email_required_title": "Error",
+            "email_required_desc": "Please enter your Gov.br email",
+            "login_success_title": "Success!",
+            "login_success_desc": "Welcome, {name}! Logged in as {role}.",
+            "login_failed_title": "Authentication Failed",
+            "login_failed_desc": "Error connecting to Gov.br"
+        }
+    }
+}

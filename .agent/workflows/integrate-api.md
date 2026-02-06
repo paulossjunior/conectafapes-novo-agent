@@ -1,24 +1,28 @@
-# Workflow: Integrate API (LEDS + Axios encapsulado)
+# Workflow: Integrate API (LEDS)
 
-1) Checar/ajustar no common:
-   - `src/common/api/config.ts`
-   - `src/common/api/provider.ts`
-   - `src/common/api/adapters/http/axios.client.ts`
-   - `src/common/api/interceptors/*`
+**Mandatário: SEMPRE iniciar com PLANNING.**
 
-2) Criar entidades:
-   - `src/modules/<modulo>/entities/<Xxx>.ts`
+## Passo 0: Planning
+- **MANDATÁRIO**: Chamar `@.agent/personas/manager.md` para vincular esta integração a uma Task/US existente.
+- Criar `implementation_plan.md`.
+- Definir Contrato da API (Path, Verbo, DTOs).
+- Solicitar aprovação.
 
-3) Criar service no módulo (sem axios direto):
-   - `src/modules/<modulo>/api/services/<XxxService>.ts`
-   - construtor recebe `HttpClientInterface`
+## Passo 1: Gitflow
+- Branch `feat/<nome>` a partir de `developing`.
 
-4) Criar factory do módulo:
-   - `src/modules/<modulo>/api/factories/<xxx>Factory.ts`
-   - usa `apiProvider.getHttpClient()`
+## Passo 2: Contrato & Entidades
+- Criar/Atualizar `entities/*` com interfaces TypeScript.
+- Respeitar o `src/common/api/http-contract.md`.
 
-5) Consumir via composable:
-   - `src/modules/<modulo>/resources/<Feature>/composables/useXxx.ts`
+## Passo 3: Implementation (SOLID)
+- Implementar Service em `src/modules/<modulo>/api/services/`.
+- SRP: O Service deve apenas delegar para o `HttpClientInterface`.
+- Injetar `HttpClient` via Factory.
 
-6) UI:
-   - loading/empty/error + feedback padronizado
+## Passo 4: TDD
+- Escrever teste unitário `.spec.ts`.
+- Validar tratamento de erros (401, 500, etc).
+
+## Passo 5: Registro e PR
+- Commit e PR para `developing`.

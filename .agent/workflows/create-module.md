@@ -1,19 +1,27 @@
 # Workflow: Create Module (LEDS)
 
-1) Criar `src/modules/<modulo>/` com:
-   - api/{services,factories}
-   - entities/
-   - store|stores/
-   - router.ts
-   - views|view/ (ou resources/)
+**Mandatário: SEMPRE iniciar com PLANNING.**
 
-2) Exportar rotas em `router.ts` (ou `routes.ts` por feature)
+## Passo 0: Planning
+- **MANDATÁRIO**: Chamar `@.agent/personas/manager.md` para criar Epic e US para este módulo no `docs/backlog/backlog.md`.
+- Criar `implementation_plan.md`.
+- Desenhar arquitetura do módulo e dependências.
+- Solicitar aprovação.
 
-3) Registrar no agregador central:
-   - `src/common/router/index.ts`
+## Passo 1: Estrutura Base (SOLID)
+Criar `src/modules/<modulo>/` com:
+- `api/`: {services, factories, mocks}.
+- `entities/`: DTOs e Interfaces.
+- `resources/`: UI organizada por features.
+- `router.ts`: Rotas isoladas do módulo.
 
-4) Se houver integração:
-   - criar service com `HttpClientInterface`
-   - criar factory que usa `apiProvider.getHttpClient()` do common/api
+## Passo 2: Mocks e TDD
+- Criar Mocks realistas (Sucesso/Erro).
+- Iniciar com testes de contrato.
 
-5) Garantir estados e feedback padrão
+## Passo 3: Mobile First & UX
+- Design baseado em Nuxt UI Premium.
+- Foco em acessibilidade desde o início.
+
+## Passo 4: Gitflow
+- Merge branch na `developing` via PR após validação.

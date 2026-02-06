@@ -1,0 +1,38 @@
+{
+    "auth": {
+        "login": {
+            "title": "Identifique-se",
+            "subtitle": "Escolha seu perfil para acessar a plataforma",
+            "govbr_button": "Acessar com Acesso Cidadão",
+            "logo_subtitle": "Fundação de Amparo à Pesquisa e Inovação do Espírito Santo",
+            "legal_notice": "Utilizamos a base do {source} para garantir a segurança dos seus dados conforme a LGPD.",
+            "govbr_source": "Gov.br",
+            "modal": {
+                "title": "Simulação Gov.br",
+                "form_label": "Formulário de Acesso Cidadão",
+                "header": "Acesso Cidadão",
+                "description": "Identifique-se para continuar o acesso ao Conecta Fapes",
+                "email_label": "E-mail cadastrado",
+                "email_help": "Insira seu e-mail do Gov.br",
+                "email_placeholder": "exemplo@email.com",
+                "hint": "Dica: Use um dos e-mails mocks (ex: joao@fapes.org) para simular o sucesso.",
+                "submit_button": "Continuar"
+            }
+        },
+        "roles": {
+            "group_label": "Selecione seu perfil de acesso",
+            "voluntario": "Voluntário",
+            "bolsista": "Bolsista",
+            "coordenador": "Coordenador",
+            "aria_label": "Perfil {label}"
+        },
+        "feedback": {
+            "email_required_title": "Erro",
+            "email_required_desc": "Por favor, insira seu e-mail do Gov.br",
+            "login_success_title": "Sucesso!",
+            "login_success_desc": "Bem-vindo, {name}! Login realizado como {role}.",
+            "login_failed_title": "Falha na Autenticação",
+            "login_failed_desc": "Erro ao conectar com o Gov.br"
+        }
+    }
+}

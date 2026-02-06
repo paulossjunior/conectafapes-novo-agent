@@ -1,0 +1,38 @@
+{
+    "users": [
+        {
+            "id": "u-1",
+            "name": "João Bolsista",
+            "email": "joao@fapes.org",
+            "roles": [
+                "bolsista"
+            ]
+        },
+        {
+            "id": "u-2",
+            "name": "Maria Voluntária",
+            "email": "maria@fapes.org",
+            "roles": [
+                "voluntario"
+            ]
+        },
+        {
+            "id": "u-3",
+            "name": "Dr. Ricardo Coordenador",
+            "email": "ricardo@fapes.org",
+            "roles": [
+                "coordenador"
+            ]
+        },
+        {
+            "id": "u-4",
+            "name": "Ana Permutação",
+            "email": "ana@fapes.org",
+            "roles": [
+                "bolsista",
+                "voluntario",
+                "coordenador"
+            ]
+        }
+    ]
+}
