@@ -5,14 +5,15 @@ import AccessibilityMenu from '../../../../../common/components/AccessibilityMen
 
 <template>
   <main 
-    class="min-h-screen w-full flex flex-col items-center justify-center p-6 relative overflow-hidden bg-[#0f172a]"
+    class="min-h-screen w-full flex flex-col items-center justify-center p-6 relative overflow-hidden transition-colors duration-300"
     role="main"
   >
     <!-- Premium Ambient Background -->
     <div class="fixed inset-0 z-0">
-      <div class="absolute inset-0 bg-[#0f172a]"></div>
-      <!-- Very subtle radial gradient for depth, much reduced opacity -->
-      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+      <!-- Background handled by global body styles for reliable theming -->
+      <div class="absolute inset-0 bg-transparent"></div>
+      <!-- Very subtle radial gradient for depth -->
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_50%)]"></div>
     </div>
 
     <!-- Accessibility Menu -->
@@ -30,8 +31,8 @@ import AccessibilityMenu from '../../../../../common/components/AccessibilityMen
         </div>
         
         <div class="flex items-baseline text-5xl md:text-[84px] font-black italic tracking-tighter leading-none">
-          <span class="text-[#3b82f6] drop-shadow-sm">fa</span>
-          <span class="text-[#89b42c] drop-shadow-sm">pes</span>
+          <span class="text-blue-600 dark:text-[#3b82f6] drop-shadow-sm">fa</span>
+          <span class="text-lime-600 dark:text-[#89b42c] drop-shadow-sm">pes</span>
         </div>
       </div>
       <p class="mt-4 px-4 text-center text-slate-400 font-medium tracking-[0.1em] md:tracking-[0.2em] uppercase text-[10px] md:text-xs opacity-60">
@@ -46,7 +47,7 @@ import AccessibilityMenu from '../../../../../common/components/AccessibilityMen
 
     <!-- Background Decorative Text (Hidden on small screens for clarity) -->
     <div class="hidden lg:block fixed bottom-10 left-10 z-0 opacity-[0.03] pointer-events-none select-none">
-      <span class="text-[12rem] font-black italic tracking-tighter text-white">CONECTA</span>
+      <span class="text-[12rem] font-black italic tracking-tighter text-slate-200 dark:text-white">CONECTA</span>
     </div>
   </main>
 </template>

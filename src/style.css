@@ -5,19 +5,27 @@
 
   html,
   body {
-    @apply antialiased bg-[#0f172a] text-slate-100;
+    @apply antialiased transition-colors duration-300;
+    @apply bg-slate-50 text-slate-900;
     font-family: 'Outfit', sans-serif;
   }
+
+  :global(.dark) body {
+    @apply bg-[#0f172a] text-slate-100;
+  }
+
   html {
     @apply transition-all duration-300;
   }
 
   /* Font Scaling */
   html.text-lg {
-    font-size: 112.5%; /* 18px */
+    font-size: 112.5%;
+    /* 18px */
   }
 
   html.text-xl {
-    font-size: 125%; /* 20px */
+    font-size: 125%;
+    /* 20px */
   }
 }

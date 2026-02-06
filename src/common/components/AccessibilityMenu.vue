@@ -8,10 +8,13 @@ const isOpen = ref(false);
 
 const toggleTheme = () => {
   isDark.value = !isDark.value;
+  const html = document.documentElement;
   if (isDark.value) {
-    document.documentElement.classList.add('dark');
+    html.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   } else {
-    document.documentElement.classList.remove('dark');
+    html.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
   }
 };
 
@@ -38,10 +41,15 @@ const cycleFontSize = () => {
 };
 
 onMounted(() => {
-  // Check system preference for theme
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  const savedTheme = localStorage.getItem('theme');
+  const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
     isDark.value = true;
     document.documentElement.classList.add('dark');
+  } else {
+    isDark.value = false;
+    document.documentElement.classList.remove('dark');
   }
 });
 </script>

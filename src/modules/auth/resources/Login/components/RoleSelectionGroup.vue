@@ -25,11 +25,11 @@ const emit = defineEmits<{
       role="radio"
       :aria-checked="modelValue === role.id"
       :aria-label="$t('auth.roles.aria_label', { label: $t(`auth.roles.${role.id}`) })"
-      class="w-full group relative flex items-center gap-4 md:gap-5 py-3 md:py-4 px-5 md:px-6 rounded-xl transition-all duration-300 font-semibold text-base md:text-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#1e293b]"
+      class="w-full group relative flex items-center gap-4 md:gap-5 py-3 md:py-4 px-5 md:px-6 rounded-xl transition-all duration-300 font-semibold text-base md:text-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#1e293b]"
       :class="[
         modelValue === role.id 
-          ? 'bg-blue-600/10 border-blue-500/50 text-blue-400' 
-          : 'bg-transparent border-slate-700/50 text-slate-400 hover:border-slate-500 hover:text-slate-300'
+          ? 'bg-blue-600/10 border-blue-500/50 text-blue-600 dark:text-blue-400' 
+          : 'bg-slate-100 dark:bg-transparent border-slate-200 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:border-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
       ]"
       @click="emit('update:modelValue', role.id)"
       @keydown.space.prevent="emit('update:modelValue', role.id)"
@@ -37,7 +37,7 @@ const emit = defineEmits<{
     >
       <div 
         class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg transition-colors duration-300"
-        :class="modelValue === role.id ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-800 text-slate-500 group-hover:bg-slate-700 group-hover:text-slate-400'"
+        :class="modelValue === role.id ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400' : 'bg-slate-200 dark:bg-slate-800 text-slate-500 group-hover:bg-slate-300 dark:group-hover:bg-slate-700 group-hover:text-slate-600 dark:group-hover:text-slate-400'"
       >
         <UIcon :name="role.icon" class="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
       </div>

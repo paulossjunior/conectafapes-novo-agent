@@ -72,15 +72,15 @@ const handleLogin = async () => {
 
 <template>
   <div 
-    class="w-full bg-[#1e293b]/50 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col items-center gap-8 md:gap-10 border border-slate-800/50 relative overflow-hidden"
+    class="w-full bg-white/80 dark:bg-[#1e293b]/50 backdrop-blur-md rounded-2xl md:rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col items-center gap-8 md:gap-10 border border-slate-200 dark:border-slate-800/50 relative overflow-hidden transition-all duration-300"
     role="main" 
     aria-labelledby="login-header"
   >
 
     <!-- Header -->
     <div class="text-center space-y-3 md:space-y-4">
-      <h2 id="login-header" class="text-2xl md:text-3xl font-black text-white tracking-tight">{{ $t('auth.login.title') }}</h2>
-      <p class="text-slate-400 text-base md:text-lg opacity-80 max-w-[280px] mx-auto leading-tight">
+      <h2 id="login-header" class="text-2xl md:text-3xl font-black text-slate-800 dark:text-white tracking-tight">{{ $t('auth.login.title') }}</h2>
+      <p class="text-slate-500 dark:text-slate-400 text-base md:text-lg opacity-80 max-w-[280px] mx-auto leading-tight">
         {{ $t('auth.login.subtitle') }}
       </p>
     </div>
