@@ -10,6 +10,7 @@
 | #3.3 | Task: AuthService TDD | Backlog | Task | Implementar service de autenticação via testes unitários |
 | #3.4 | Task: Login View (Mobile First) | Backlog | Task | Criar interface de login responsiva com Nuxt UI |
 | #3.5 | Task: Refine Login UI (Minimalist) | Done | Task | Redesign login page for a minimalist, premium look (Mobile First) |
+| #3.6 | Task: Refactor LoginCard (Reusability) | Done | Task | Extract RoleSelectionGroup and LanguageSwitcher for reusability |
 | #4 | Configuração de UI (Nuxt UI) | Done | Task | Instalar e configurar Nuxt UI para Vue 3 |
 | #5 | Configuração de Testes (Vitest) | In Progress | Task | Configurar Vitest para TDD mandatário |
 
@@ -19,3 +20,4 @@
 - [x] #4 Configuração de UI (Nuxt UI)
 - [/] #5 Configuração de Testes (Vitest)
 - [x] #3.5 Refine Login UI (Minimalist)
+- [x] #3.6 Refactor LoginCard (Reusability)

@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router';
 import { AuthService } from '../../../api/services/auth.service';
 import { apiProvider } from '../../../../../common/api/provider';
 import { useI18n } from 'vue-i18n';
+import RoleSelectionGroup from './RoleSelectionGroup.vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 // Em Nuxt UI 4 (vue-plugin), os composables podem não ser auto-importados
 // dependendo da configuração do Vite.
@@ -84,39 +86,11 @@ const handleLogin = async () => {
     </div>
 
     <!-- Role Selection (Radio Group for accessibility) -->
-    <div class="w-full space-y-3 md:space-y-4" role="radiogroup" :aria-label="$t('auth.roles.group_label')">
-      <button
-        v-for="role in roles"
-        :key="role.id"
-        type="button"
-        role="radio"
-        :aria-checked="selectedRole === role.id"
-        :aria-label="$t('auth.roles.aria_label', { label: $t(`auth.roles.${role.id}`) })"
-        class="w-full group relative flex items-center gap-4 md:gap-5 py-3 md:py-4 px-5 md:px-6 rounded-xl transition-all duration-300 font-semibold text-base md:text-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#1e293b]"
-        :class="[
-          selectedRole === role.id 
-            ? 'bg-blue-600/10 border-blue-500/50 text-blue-400' 
-            : 'bg-transparent border-slate-700/50 text-slate-400 hover:border-slate-500 hover:text-slate-300'
-        ]"
-        @click="selectedRole = role.id"
-        @keydown.space.prevent="selectedRole = role.id"
-        @keydown.enter.prevent="selectedRole = role.id"
-      >
-        <div 
-          class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg transition-colors duration-300"
-          :class="selectedRole === role.id ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-800 text-slate-500 group-hover:bg-slate-700 group-hover:text-slate-400'"
-        >
-          <UIcon :name="role.icon" class="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
-        </div>
-        <span class="flex-1 text-left">{{ $t(`auth.roles.${role.id}`) }}</span>
-        <UIcon 
-          v-if="selectedRole === role.id" 
-          name="i-heroicons-check-circle" 
-          class="w-5 h-5 md:w-6 md:h-6 text-blue-500 animate-in zoom-in duration-300" 
-          aria-hidden="true"
-        />
-      </button>
-    </div>
+    <!-- Role Selection (Radio Group for accessibility) -->
+    <RoleSelectionGroup 
+      v-model="selectedRole" 
+      :roles="roles" 
+    />
 
     <!-- Primary Action -->
     <div class="w-full pt-2 md:pt-4">
@@ -137,17 +111,7 @@ const handleLogin = async () => {
         {{ $t('auth.login.legal_notice', { source: $t('auth.login.govbr_source') }) }}
       </p>
       
-      <div class="flex items-center justify-center gap-2">
-        <button 
-          v-for="lang in ['pt-BR', 'en', 'es']" 
-          :key="lang"
-          @click="$i18n.locale = lang"
-          class="px-2 py-1 text-[10px] uppercase font-bold rounded border transition-colors"
-          :class="$i18n.locale === lang ? 'bg-blue-600 text-white border-blue-500' : 'text-slate-400 border-slate-700 hover:border-slate-500'"
-        >
-          {{ lang.split('-')[0] }}
-        </button>
-      </div>
+      <LanguageSwitcher />
     </div>
 
     <!-- Gov.br Simulation Modal -->
@@ -197,12 +161,4 @@ const handleLogin = async () => {
   </div>
 </template>
 
-<style scoped>
-button {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
-.animate-in {
-  animation-fill-mode: forwards;
-}
-</style>
