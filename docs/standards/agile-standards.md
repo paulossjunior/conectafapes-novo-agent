@@ -59,9 +59,13 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ### 3.2 PR Description Template
 
+> **Template File**: [.agent/templates/PULL_REQUEST_TEMPLATE.md](file:///home/paulossjunior/projects/conectafapes/novo-agent/.agent/templates/PULL_REQUEST_TEMPLATE.md)
+
 ```markdown
 ## Related Issue
 Closes #<ISSUE_ID>
+...
+```
 
 ## Proposed Changes
 - Brief summary of changes.
