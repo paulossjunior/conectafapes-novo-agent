@@ -14,10 +14,15 @@
 | #4 | Configuração de UI (Nuxt UI) | Done | Task | Instalar e configurar Nuxt UI para Vue 3 |
 | #5 | Configuração de Testes (Vitest) | In Progress | Task | Configurar Vitest para TDD mandatário |
 
-## Current Sprint
+| #3.7 | US: Accessibility Features | Done | US | Como usuário com baixa visão, quero ajustar contraste/tema para melhor leitura |
+| #3.8 | Task: Accessibility Menu Component | Done | Task | Create AccessibilityMenu.vue with High Contrast, Theme, and Font Size controls |
+
+## Current sprint
 - [x] #1 Inicialização do Projeto
 - [x] #2 Configuração da Camada de API
 - [x] #4 Configuração de UI (Nuxt UI)
 - [/] #5 Configuração de Testes (Vitest)
 - [x] #3.5 Refine Login UI (Minimalist)
 - [x] #3.6 Refactor LoginCard (Reusability)
+- [x] #3.7 US: Accessibility Features
+- [x] #3.8 Task: Accessibility Menu Component

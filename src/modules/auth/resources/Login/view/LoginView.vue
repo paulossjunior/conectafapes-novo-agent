@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LoginCard from '../components/LoginCard.vue';
+import AccessibilityMenu from '../../../../../common/components/AccessibilityMenu.vue';
 </script>
 
 <template>
@@ -13,6 +14,9 @@ import LoginCard from '../components/LoginCard.vue';
       <!-- Very subtle radial gradient for depth, much reduced opacity -->
       <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_50%)]"></div>
     </div>
+
+    <!-- Accessibility Menu -->
+    <AccessibilityMenu />
 
     <!-- Header / Logo Section -->
     <div class="relative z-10 mb-8 md:mb-16 flex flex-col items-center select-none animate-fade-in">

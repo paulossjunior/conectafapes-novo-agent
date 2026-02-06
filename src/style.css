@@ -8,4 +8,16 @@
     @apply antialiased bg-[#0f172a] text-slate-100;
     font-family: 'Outfit', sans-serif;
   }
+  html {
+    @apply transition-all duration-300;
+  }
+
+  /* Font Scaling */
+  html.text-lg {
+    font-size: 112.5%; /* 18px */
+  }
+
+  html.text-xl {
+    font-size: 125%; /* 20px */
+  }
 }
